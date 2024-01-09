@@ -1,0 +1,30 @@
+/* .header-contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+} */
+/* .logo-redes{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100px;
+} */
+.nv{
+    /* border: 1px solid rgb(4, 21, 79); */
+    background-color: #090968e3 !important;
+
+}
+.header-contenedor{
+    background-color: #090968e3 ;
+}
+/* app-redes-sociales{
+    float: right;
+} */
+app-banner{
+    display: block;
+}
+a{
+    color: white;
+    
+}
