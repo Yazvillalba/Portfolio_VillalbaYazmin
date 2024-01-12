@@ -16,8 +16,7 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import{HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-import{HttpClient } from '@angular/common/http';
-// import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/login/login.component';
 // import { NuevoUsuarioComponent } from './model/nuevo-usuario/nuevo-usuario.component';
 @NgModule({
     declarations: [
@@ -32,8 +31,8 @@ import{HttpClient } from '@angular/common/http';
         HysComponent,
         ProyectosComponent,
         HomeComponent,
-        FooterComponent
-        // LoginComponent,
+        FooterComponent,
+        LoginComponent
         // NuevoUsuarioComponent
     ],
     providers: [],
@@ -44,7 +43,7 @@ import{HttpClient } from '@angular/common/http';
         NgCircleProgressModule.forRoot({}),
         HttpClientModule,
         FormsModule,
-        HttpClient
+        
     ]
 })
 export class AppModule { }
