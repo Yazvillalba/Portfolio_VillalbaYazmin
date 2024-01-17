@@ -8,6 +8,7 @@ import com.PortfolioVillalbaYazmin.YazminVillalba.Entity.Persona;
 import com.PortfolioVillalbaYazmin.YazminVillalba.Interface.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author yaz
  */
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 public class PersonaController {
 
     @Autowired
@@ -39,13 +40,13 @@ public class PersonaController {
         IPersonaService.savePersona(persona);
         return "Persona creada con exito";
     }
-
+    @PreAuthorize("hasRole('ADMIN)")
     @DeleteMapping("/personas/borrar/{id}")
     public String deletePersona(@PathVariable Long id) {
         IPersonaService.deletePersona(id);
         return "Persona eliminada con exito";
     }
-
+    @PreAuthorize("hasRole('ADMIN)")
     @PutMapping("/personas/editar/{id}")
     public Persona editPersona(@PathVariable Long id, @RequestParam("nombre") String nuevoNombre, @RequestParam("apellido") String nuevoApellido,
             @RequestParam("img") String nuevoimg) {

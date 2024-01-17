@@ -17,6 +17,8 @@ import{HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 // import { NuevoUsuarioComponent } from './model/nuevo-usuario/nuevo-usuario.component';
 @NgModule({
     declarations: [
@@ -32,7 +34,9 @@ import { LoginComponent } from './components/login/login.component';
         ProyectosComponent,
         HomeComponent,
         FooterComponent,
-        LoginComponent
+        LoginComponent,
+        NewExperienciaComponent,
+        EditExperienciaComponent
         // NuevoUsuarioComponent
     ],
     providers: [],

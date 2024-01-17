@@ -40,7 +40,7 @@ public class MainSecurity {
 
 
     private final AuthenticationProvider authenticationProvider;
- @Bean
+    @Bean
    JwtTokenFilter jwtTokenFilter(){
        return new JwtTokenFilter();
    }
@@ -50,7 +50,7 @@ public class MainSecurity {
         http.cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/auth/**").permitAll();
+                    auth.requestMatchers("**").permitAll();
                     //.requestMatchers("").hasRole("ADMIN");
                     //auth.requestMatchers("").hasRole("ADMIN");
                     auth.anyRequest().authenticated();
