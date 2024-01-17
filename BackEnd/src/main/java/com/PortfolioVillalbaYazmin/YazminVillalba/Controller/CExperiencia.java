@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author yaz
  */
 @Controller
-@RequestMapping("explaboral")
+@RequestMapping("/explaboral")
 @CrossOrigin("*")
 public class CExperiencia {
     @Autowired
@@ -69,7 +70,7 @@ public class CExperiencia {
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("experiencia actualizada"), HttpStatus.OK);
     }
-    
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?>delete(@PathVariable("id") int id){
         if(!sExperiencia.existsById(id)){
             return new ResponseEntity(new Mensaje("iD no existe"), HttpStatus.BAD_REQUEST);

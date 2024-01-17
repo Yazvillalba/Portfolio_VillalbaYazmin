@@ -50,7 +50,7 @@ public class BeanConfig {
         configuration.setAllowedMethods(List.of("GET", "POST", "PATCH", "DELETE", "PUT"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("**", configuration);
+        source.registerCorsConfiguration("/**", configuration);
         return source;
     }
  
