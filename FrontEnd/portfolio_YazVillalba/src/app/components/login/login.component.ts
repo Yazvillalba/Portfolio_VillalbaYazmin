@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginUsuario } from '../../model/login-usuario';
 import { TokenService } from '../../service/token-service';
 import { AuthService } from '../../service/auth-service';
-import { Router } from '@angular/router'; // Correct import for Angular Router
+import { Router } from '@angular/router'; 
 
 
 @Component({
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit{
       this.tokenService.setUsername(data.nombreUsuario);
       this.tokenService.setAuthorities(data.authorities);
       this.roles = data.authorities;
-      this.router.navigate([' ']);
+      this.router.navigate(['/']);
     }, err =>{
       this.isLogged = false;
       this.isLogginFail = true;

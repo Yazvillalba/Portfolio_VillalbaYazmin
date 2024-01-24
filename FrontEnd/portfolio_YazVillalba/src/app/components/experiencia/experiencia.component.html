@@ -13,11 +13,11 @@
                     <tr *ngFor="let Experiencia of exp">
                         <td>{{Experiencia.nombreE}}</td>
                         <td>{{Experiencia.descripcionE}}</td>
-                        <td><button class="btn btn-light" routerLink="/editExperiencia/{{Experiencia.id}}">
+                        <td *ngIf="isLogged"><button class="btn btn-light" routerLink="/editExperiencia/{{Experiencia.id}}">
                                 <i class="bi bi-pencil-fill"></i>Editar
                             </button>
                         </td>
-                        <td><button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                        <td *ngIf="isLogged"><button class="btn btn-danger" (click)="delete(Experiencia.id)">
                             <i class="bi bi-trash"></i>Borrar
                             </button>
                         </td>
